@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Without React</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    .app {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    header {
+      background: darkgoldenrod;
+      color: darkred;
+      height: 100px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer {
+      height: 100px;
+      background: darkred;
+      color: darkgoldenrod;
+    }
+
+    header, footer {
+      text-align: right;
+    }
+
+    .actions {
+      display: none;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="login">Log in</div>
+      <div class="actions">My Account | Log out</div>
+    </header>
+    <main>
+      <div><button class="login-btn">Toggle log in</button></div>
+    </main>
+    <footer>
+      <div class="login">Log in</div>
+      <div class="actions">My Account | Log out</div>
+    </footer>
+  </div>
+  <script>
+    let showLoginStuff = true;
+
+    const button = document.querySelector('button')
+    button.addEventListener('click', function(event) {
+      const headerLogin = document.querySelector('header .login')
+      headerLogin.style.display = showLoginStuff ? 'none' : 'block';
+      const footerLogin = document.querySelector('footer .login')
+      footerLogin.style.display = showLoginStuff ? 'none' : 'block';
+
+      const headerActions = document.querySelector('header .actions')
+      headerActions.style.display = !showLoginStuff ? 'none' : 'block';
+      const footerActions = document.querySelector('footer .actions')
+      footerActions.style.display = !showLoginStuff ? 'none' : 'block';
+
+      showLoginStuff = !showLoginStuff;
+    })
+  </script>
+</body>
+</html>
