@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Without React</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       height: 100%;
     }
@@ -24,7 +28,6 @@
     header {
       background: darkgoldenrod;
       color: darkred;
-      height: 100px;
     }
 
     main {
@@ -35,17 +38,23 @@
     }
 
     footer {
-      height: 100px;
       background: darkred;
       color: darkgoldenrod;
     }
 
     header, footer {
+      height: 80px;
       text-align: right;
+      font-size: 32px;
+      padding: 20px;
     }
 
     .actions {
       display: none;
+    }
+
+    main button {
+      font-size: xx-large;
     }
   </style>
 
